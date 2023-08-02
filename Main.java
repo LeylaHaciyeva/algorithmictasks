@@ -58,10 +58,6 @@ public class Main {
         System.out.println(reverse);
     }
 
-//            4. Verlmiş ədədin palindrome olub-olmamasını yoxlayın. Məs: İnput: 123321 Output: true
-
-//            6.  Verilmiş ədədin rəqəmlərinin unikal(təkrarlanmayan) olub-olmamasını yoxlayın.
-//    Məs: İnput: 53213 Output: false(3 ədədi təkrarlanır)
 
     //       5. Verilmiş ədədin neçə mərtəbəli olduğunu təyin edin. Məs: İnput: 23456  Output: 5
     static void myFunc5(int number) {
@@ -77,7 +73,7 @@ public class Main {
 
     //            6. Verlmiş ədədin sadə rəqəmlərinin cəmini tapın. Məs: İnput: 123456  Output: 11
     static void myFunc6() {
-        int number = 5432;
+        /*int number = 5432;
         int a = number;
         int sum = 0;
         int count = 0;
@@ -90,10 +86,29 @@ public class Main {
                 }
             }
             a = a / 10;
+        }*/
+        int i = 0;
+        int num = 0;
+        //Empty String
+        String primeNumbers = "";
+
+        for (i = 1; i <= 100; i++) {
+            int counter = 0;
+            for (num = i; num >= 1; num--) {
+                if (i % num == 0) {
+                    counter = counter + 1;
+                }
+            }
+            if (counter == 2) {
+                //Appended the Prime number to the String
+                primeNumbers = primeNumbers + i + " ";
+            }
         }
+        System.out.println("Prime numbers from 1 to 100 are :");
+        System.out.println(primeNumbers);
     }
 
-    //            7. İnteger massivində verilmiş ədədlərin ən böyüyünü tapın. Məs: İnput: [10,23,2,45,7]  Output: 45
+    //       7. İnteger massivində verilmiş ədədlərin ən böyüyünü tapın. Məs: İnput: [10,23,2,45,7]  Output: 45
     static void myFunc7() {
         int[] myarr = new int[]{10, 23, 2, 45, 7};
         int element = myarr[0];
@@ -106,6 +121,41 @@ public class Main {
 
     }
 
+    //            8. Verlmiş ədədin palindrome olub-olmamasını yoxlayın. Məs: İnput: 123321 Output: true
+    static boolean myFunc8(int number) {
+        int originalNumber = number;
+        int reversedNumber = 0;
+
+        while (number > 0) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number /= 10;
+        }
+        return originalNumber == reversedNumber;
+    }
+
+    //            9.  Verilmiş ədədin rəqəmlərinin unikal(təkrarlanmayan) olub-olmamasını yoxlayın.
+//    Məs: İnput: 53213 Output: false(3 ədədi təkrarlanır)
+    static boolean myFunc9() {
+        int number = 3321;
+        while (number > 0) {
+            int currentDigit = number % 10;//3
+            int remainingDigits = number / 10;//12
+
+            while (remainingDigits > 0) {//12
+                int nextDigit = remainingDigits % 10; //2
+                if (currentDigit == nextDigit) {//3==2
+                    return false;
+                }
+                remainingDigits /= 10;//1
+            }
+
+            number /= 10;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
 //        myFunc1();
 //        myFunc2();
@@ -113,6 +163,8 @@ public class Main {
 //        myFunc4();
 //        myFunc5(54321);
 //        myFunc6();
-        myFunc7();
+//        myFunc7();
+//        System.out.println( myFunc8(12332));
+        System.out.println(myFunc9());
     }
 }
