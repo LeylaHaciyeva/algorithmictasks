@@ -71,27 +71,13 @@ public class Main {
         System.out.println(count);
     }
 
-    //            6. Verlmiş ədədin sadə rəqəmlərinin cəmini tapın. Məs: İnput: 123456  Output: 11
+    //            6. 1-den 100-e qeder sade ededleri cap edin.
+    //            Verlmiş ədədin sadə rəqəmlərinin cəmini tapın. Məs: İnput: 123456  Output: 11
+
     static void myFunc6() {
-        /*int number = 5432;
-        int a = number;
-        int sum = 0;
-        int count = 0;
-        while (a % 10 != 0) {
-            for (int i = 1; i <= (a % 10) / 2; i++) {
-                if (((a % 10) % i) == 0) {
-                    System.out.println("a%10 " + (a % 10));
-                    count++;
-                    System.out.println("count " + count);
-                }
-            }
-            a = a / 10;
-        }*/
         int i = 0;
         int num = 0;
-        //Empty String
         String primeNumbers = "";
-
         for (i = 1; i <= 100; i++) {
             int counter = 0;
             for (num = i; num >= 1; num--) {
@@ -100,7 +86,6 @@ public class Main {
                 }
             }
             if (counter == 2) {
-                //Appended the Prime number to the String
                 primeNumbers = primeNumbers + i + " ";
             }
         }
@@ -165,6 +150,6 @@ public class Main {
 //        myFunc6();
 //        myFunc7();
 //        System.out.println( myFunc8(12332));
-        System.out.println(myFunc9());
+//        System.out.println(myFunc9());
     }
 }
