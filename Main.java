@@ -140,7 +140,20 @@ public class Main {
 
         return true;
     }
+   // Task 10:
+   // Metod yazin ki daxil sozde axtarilan elementin nece defe oldugunu tapsin
+    static void myFunc10(char search){
+        String str="salam";
+        int count=0;
+        for (int i=0;i<str.length();i++){
+            if(str.charAt(i)==search){
+                count++;
+            }
 
+        }
+        System.out.println(count);
+
+    }
     public static void main(String[] args) {
 //        myFunc1();
 //        myFunc2();
@@ -151,5 +164,6 @@ public class Main {
 //        myFunc7();
 //        System.out.println( myFunc8(12332));
 //        System.out.println(myFunc9());
+        myFunc10('a');
     }
 }
